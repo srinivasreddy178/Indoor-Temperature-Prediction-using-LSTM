@@ -53,7 +53,7 @@ def Forecasting(df_initial):
     df_initial = df_initial.reset_index(drop=True)
     
     df_initial = df_initial.rename(columns={"Date/Time EAT": "Date"})
-    df_initial['Date'] = pd.to_datetime(df_initial['Date'])
+    df_initial['Date'] = pd.to_datetime(df_initial['Date'], infer_datetime_format=True,dayfirst=True)
     
     req_cols = ['Date',
             'Avg_indoor_temp(hourly)', 'temperature_2m', 'relative_humidity_2m', 
