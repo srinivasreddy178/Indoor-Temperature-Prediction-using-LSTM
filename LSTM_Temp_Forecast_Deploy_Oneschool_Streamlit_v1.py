@@ -143,11 +143,10 @@ st.write("Please upload previous 10 days data in *.csv format: ")
 
 inputdata = st.file_uploader("upload file", type={"csv", "txt"})
 
-df_initial = pd.read_csv(inputdata)
-#if inputdata is not None:
-#    df_initial = pd.read_csv(inputdata)
-    
-st.write(df_initial)  # display the data
+#df_initial = pd.read_csv(inputdata)
+if inputdata is not None:
+    df_initial = pd.read_csv(inputdata)
+    st.write(df_initial)  # display the data
 
 #-------------------------------------------------------------------------------------------------------
 if st.button('Predict',type="primary"):
